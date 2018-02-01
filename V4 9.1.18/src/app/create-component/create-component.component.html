@@ -1,0 +1,36 @@
+
+<div class="right_div" >
+  <h2>Create New Data Here!</h2> 
+  <br><br>
+ 
+<form [formGroup]="forms" (ngSubmit)="createDetail(forms.value)">
+  <table>
+    <tr>
+      <td><label>Constant:</label></td>
+      <td><input  formControlName="Constant"/></td>
+    </tr>
+    <tr> 
+      <td><label>ConfigId:</label></td>
+      <td><input  formControlName="ConfigId" /></td>
+    </tr>
+    <tr>
+      <td><label>Value:</label></td>
+      <td><input  formControlName="Value"/></td>
+    </tr>
+    <tr>
+      <td><label>Edit Flag:</label></td>
+      <td><input  formControlName="EditFlag"/></td>
+    </tr>
+    
+  </table>
+
+  <table align="center">
+    
+        <tr>
+            <td><button class="btn btn-primary" (click)="goBack()">Back</button></td>
+          <td><button class="btn btn-success" type="submit" [disabled]="!forms.valid">create</button></td>
+          
+        </tr>
+      </table>
+    </form>
+</div>

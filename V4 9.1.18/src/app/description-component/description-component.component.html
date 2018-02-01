@@ -1,0 +1,53 @@
+<div class="left_div">
+  <h1>{{data.constant}} Details!</h1>  
+    <br>
+    <br>
+   <span><b>Constant: </b>{{data.constant}}</span><br />
+    <span><b>ConfigId: </b>{{data.configId}}</span><br />
+    <span><b>Value: </b>{{data.value}}</span><br />
+    <span><b>EditFlag: </b>{{data.editFlag}}</span><br />
+    <br>
+    
+    <table align="center">
+      
+          <tr>
+            <td><button class="btn btn-primary" (click)="goBack()">Back</button></td>
+            <td><button class="btn btn-warning" (click)="editDetail()">Edit Details</button></td>
+            <td><button class="btn btn-danger" (click)="deleteDetail()">Delete Details</button></td>
+          </tr>
+        </table>
+
+
+</div>
+<div class="right_div" *ngIf="loggedIn">
+  <h2>Edit {{data.constant}} Details Here!</h2> 
+  <br><br>
+  <table>
+    <tr>
+      <td><label>Constant:</label></td>
+      <td><input [(ngModel)]="data.constant" placeholder="name" /></td>
+    </tr>
+    <tr>
+      <td><label>ConfigId:</label></td>
+      <td><input [(ngModel)]="data.configId" placeholder="name" /></td>
+    </tr>
+    
+    <tr>
+        
+      <td><label>Value:</label></td>
+      <td><input [(ngModel)]="data.value" placeholder="name" /></td>
+    </tr>
+    <tr>
+      <td><label>EditFlag:</label></td>
+      <td><input [(ngModel)]="data.editFlag" placeholder="name" /></td>
+    </tr>
+
+  </table>
+  <table align="center">
+    
+        <tr>
+          <td><button class="btn btn-primary" (click)="exitEditDetail()">Exit Editing</button></td>
+          <td><button class="btn btn-success" (click)="saveDetail()">Save</button></td>
+        </tr>
+      </table>
+</div>
